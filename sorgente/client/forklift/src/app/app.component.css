@@ -1,0 +1,52 @@
+.total{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline;
+}
+
+
+
+h1 {
+    text-align: center;
+    font-size: 1.75em;
+    margin: 0;
+    margin-bottom: 0.1em;
+}
+h2{
+    font-size: 1.5em;
+    margin: 0;
+}
+.map {
+    margin: 0em;
+    width: 40%;
+    padding: 3em;
+}
+.arrows, .manuale{
+    width: 100%;
+    padding: 1em;
+}
+
+
+.startb{
+   padding: 0.6em;
+}
+
+
+
+.cambioguida{
+    margin: 0em;
+    width: 15%;
+    padding: 1em;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 35px; 
+}
+.taskList{
+    margin-top: 1em;
+}
+.guida{
+    margin: 1% 2% 3% 2%;
+}
+
+h1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

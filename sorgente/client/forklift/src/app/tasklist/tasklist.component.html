@@ -1,0 +1,36 @@
+<div *ngIf="showTable">
+<table *ngIf = "normal" class="list">
+    <tr class="th-table">
+        <td colspan="100%">Task</td>
+    </tr>
+    <tr class="first">
+        <td>Prossima</td>
+        <td style="text-align:center" colspan="100%">Altre</td>
+    </tr>  
+    <tr>
+        <td class="col" *ngFor="let task of lista">
+            {{task}}
+        </td>
+    </tr>
+
+    
+</table>
+
+<table *ngIf = "!normal" class="list">
+    <tr class="th-table">
+        <td colspan="100%">Vai alla base</td>
+    </tr>
+    <tr>
+        <td class="col" id="base" *ngFor="let task of lista">
+            {{task}}
+        </td>
+    </tr>
+
+    
+</table>
+</div>
+<h4 *ngIf="!showTable" class="nolist">Nessuna lista</h4>
+
+<div *ngIf="showButton">
+    <button pButton class="task_ok" label="Task Completata" (click)="taskCompletata()"></button>
+</div>

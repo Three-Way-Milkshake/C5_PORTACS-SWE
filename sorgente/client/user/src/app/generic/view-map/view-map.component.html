@@ -1,0 +1,80 @@
+<h2>Mappa</h2>
+
+<table class="map">
+    <tr *ngFor="let row of tmp; let i = index">
+        <td *ngFor="let cell of row; let j = index">
+            <div class="cc" [ngSwitch]="cell">
+                <div *ngSwitchCase="0" class="NTr">&nbsp;</div>
+                <div *ngSwitchCase="1" class="YTr">&nbsp;</div>
+                <div *ngSwitchCase="2" class="dir">&#8593;</div>
+                <div *ngSwitchCase="3" class="dir">&#8594;</div>
+                <div *ngSwitchCase="4" class="dir">&#8595;</div>
+                <div *ngSwitchCase="5" class="dir">&#8592;</div>
+                <div *ngSwitchCase="7" class="imgUnit" [style.background-image]="'url(assets/mulettoN.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="8" class="imgUnit" [style.background-image]="'url(assets/mulettoE.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="9" class="imgUnit" [style.background-image]="'url(assets/mulettoS.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="10" class="imgUnit" [style.background-image]="'url(assets/mulettoO.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="30" class="imgUnitRed" [style.background-image]="'url(assets/mulettoN.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="31" class="imgUnitRed" [style.background-image]="'url(assets/mulettoE.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="32" class="imgUnitRed" [style.background-image]="'url(assets/mulettoS.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="33" class="imgUnitRed" [style.background-image]="'url(assets/mulettoO.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="40" class="imgUnitBrown" [style.background-image]="'url(assets/mulettoN.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="41" class="imgUnitBrown" [style.background-image]="'url(assets/mulettoE.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="42" class="imgUnitBrown" [style.background-image]="'url(assets/mulettoS.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="43" class="imgUnitBrown" [style.background-image]="'url(assets/mulettoO.png)'"><p class="idUnit">{{idName[i][j]}}</p></div>
+                <div *ngSwitchCase="50" class="imgUnitBlue" [style.background-image]="'url(assets/mulettoN.png)'"><p class="idUnit">{{idName[i][j]}} unità</p></div>
+                <div *ngSwitchCase="51" class="imgUnitBlue" [style.background-image]="'url(assets/mulettoE.png)'"><p class="idUnit">{{idName[i][j]}} unità</p></div>
+                <div *ngSwitchCase="52" class="imgUnitBlue" [style.background-image]="'url(assets/mulettoS.png)'"><p class="idUnit">{{idName[i][j]}} unità</p></div>
+                <div *ngSwitchCase="53" class="imgUnitBlue" [style.background-image]="'url(assets/mulettoO.png)'"><p class="idUnit">{{idName[i][j]}} unità</p></div>
+                <p *ngSwitchCase="20" class="POILoad">{{poiMap[i][j]}}</p>
+                <p *ngSwitchCase="21" class="POIUnload">{{poiMap[i][j]}}</p>
+                <p *ngSwitchCase="22" class="POIExit">{{poiMap[i][j]}}</p>   
+            </div>
+            
+           
+        </td>
+    </tr>
+</table>
+
+<table class="list">   
+    <tr class="first">
+        <td>Stato</td>
+        <td>Muletto</td>
+        <td>Prossima task</td>
+        <td colspan="100%">Altre task</td>
+    </tr>    
+    <tr class="row" *ngFor="let row of tasklist; let i = index">
+        <td class="col">{{status[i]}}</td>
+
+        <td class="col" *ngFor="let cell of row; let j = index">
+            <p class="tcell" > {{cell}} </p>
+        </td>            
+    </tr>
+</table>
+
+<table class="legend">
+    <tr>
+        <td class="color">Cella</td>
+        <td>Tipo</td>
+    </tr>
+    <tr>
+        <td class="NTr">&nbsp;</td>
+        <td>Zona non transitabile</td> 
+    </tr>
+    <tr>
+        <td class="YTr">&nbsp;</td>
+        <td>Zona transitabile</td> 
+    </tr>
+    <tr>
+        <td class="POILoad">&nbsp;</td>
+        <td>POI di carico</td> 
+    </tr>
+    <tr>
+        <td class="POIUnload">&nbsp;</td>
+        <td>POI di scarico</td> 
+    </tr>
+    <tr>
+        <td class="POIExit">&nbsp;</td>
+        <td>POI d'uscita</td> 
+    </tr>
+</table>

@@ -1,0 +1,21 @@
+<div *ngIf="isLoggedIn">
+<h1>PORTACS v1.0.0 Dashboard - Benvenuto, {{nome}} {{cognome}}</h1>
+<div class="divErr" *ngIf="errEcc">
+    <p class="err"><b>{{msgEcc}}</b></p>
+    <button (click)="okEcc()">Ok</button>
+</div>
+<ul>
+    <li><a routerLink="viewmap">Mappa</a></li>
+    <li><a routerLink="poilist">Lista POI</a></li>
+    <li><a routerLink="account">Il tuo Account</a></li>
+    <li><a *ngIf="isAdmin" routerLink="managemap">Modifica la mappa</a></li>
+    <li><a *ngIf="isAdmin" routerLink="registrationmanager">Registra un manager</a></li>
+    <li><a *ngIf="isAdmin" routerLink="viewlistmanager">Visualizza lista manager</a></li>
+    <li><a *ngIf="isAdmin" routerLink="listunit">Visualizza lista unità</a></li>
+    <li><a *ngIf="isManager" routerLink="tasklist">Visualizza liste di task</a></li>
+    <li><a *ngIf="isManager" routerLink="managetask">Aggiungi lista di task</a></li>
+    
+    <li class="last"><a routerLink="login" (click)="logout()">Logout</a></li>
+    <!--<li class="last"><a routerLink="">Chiudi</a></li>-->
+</ul>
+</div>

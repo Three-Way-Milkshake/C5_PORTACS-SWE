@@ -1,0 +1,15 @@
+.startbb{
+    width: auto;
+    background-color: rgb(12, 12, 148);
+    border: 1px solid darkblue;
+    padding: 0.4em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.error{
+    font-size: 1em;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}

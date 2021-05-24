@@ -1,0 +1,81 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'com.diffplug.spotless' version '5.12.4'
+
+    id 'com.github.kt3k.coveralls' version '2.12.0'
+    id 'jacoco'
+
+    id 'checkstyle'
+}
+
+group = 'it.unipd.threewaymilkshake'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '15'
+
+java {
+    sourceCompatibility = JavaVersion.toVersion('15')
+    targetCompatibility = JavaVersion.toVersion('15')
+}
+
+spotless {
+  java {
+    // don't need to set target, it is inferred from java
+
+    // apply a specific flavor of google-java-format4
+    // trimTrailingWhitespace()
+    // indentWithTabs() // or spaces. Takes an integer argument if you don't like 4
+    // endWithNewline()
+    importOrder() // standard import order
+    // importOrder('java', 'javax', 'com.acme', '') // or importOrderFile
+    // You probably want an empty string at the end - all of the
+    // imports you didn't specify explicitly will go there.
+
+    removeUnusedImports()
+
+    googleJavaFormat() // has its own section below
+    // eclipse()          // has its own section below
+    // prettier()         // has its own section below
+    // clangFormat()      // has its own section below
+    // googleJavaFormat('1.8').aosp()
+    // make sure every file has the following copyright header.
+    // optionally, Spotless can set copyright years by digging
+    // through git history (see "license" section below)
+    licenseHeader '/* (C) 2021 Three Way Milkshake - PORTACS - UniPd SWE*/'
+  }
+}
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // implementation 'org.mockito:mockito-core:3.+' //TODO remove
+    implementation 'net.bytebuddy:byte-buddy:1.10.22'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.mockito:mockito-core:3.+'
+}
+
+jacocoTestReport{
+    reports{
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = true
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+checkstyle {
+    config = rootProject.resources.text.fromFile('config/checkstyle/checkstyle.xml')
+}

@@ -1,0 +1,74 @@
+input[type="text"] {
+    width: 100%;
+    
+    padding: 12px 20px;
+    margin: 10px 0;
+    font-size: 1em;
+    box-sizing: border-box;
+   
+  }
+
+label{
+    font-size: 1.2em;
+}
+  input:focus {
+    border: 3px solid #555;
+  }
+
+input[type="submit"]{
+  
+    background-color: #77ba99;
+    text-align: center;
+    padding: 16px;
+    border-radius: 20%;
+   margin-left: 45%;
+}
+
+h2{
+    text-align: center;
+}
+.deleteunit{
+  display: inline;
+  margin-right: 0;
+}
+select {
+
+  background-color: transparent;
+  border: 3px solid #555;
+  padding: 1em;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+.listau{
+  width: 20%;
+  margin-left: 40%;
+}
+
+.listau ul {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid #333;
+}
+
+.listau ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #333;
+  background-color: rgb(216, 216, 216);
+}
+
+.listau ul li:last-child {
+  border-bottom: none
+}
+
+
+
+
+
+
+

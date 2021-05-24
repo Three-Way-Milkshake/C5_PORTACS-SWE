@@ -1,0 +1,42 @@
+<div class="total">
+    <h1>PORTACS v1.0.0 - Benvenuto nel tuo muletto</h1>   
+    
+    <div class = "alert">
+        <app-admin-notification></app-admin-notification>
+    </div>
+    <div class="taskList">
+        
+        <div>
+            <app-tasklist></app-tasklist>
+        </div>
+        <div class = "startb">
+            <app-startbutton></app-startbutton>
+        </div>
+    </div>
+    <div class = "map">
+        <h2>Mappa</h2>
+        <app-map></app-map>
+    </div>
+    
+        
+        <button pButton type="button"  label="Metti in guida {{guida}}" (click)="cambio()"></button>
+
+        <div class="guida">
+            <div *ngIf="!automatica">
+                <div class="manuale">
+                    <h2> Guida Manuale </h2>
+                    <app-manualdriving></app-manualdriving>
+                </div>
+            </div>
+            <h2>Suggerimenti Guida</h2>
+            <div class="arrows">
+                <app-arrows></app-arrows>
+            </div>
+
+            
+        </div>
+        </div>
+
+
+
+

@@ -1,0 +1,21 @@
+<h2>Il tuo account</h2>
+<div>
+    <label id="name">Nome: </label>
+    <input for="name" #Name value={{name}} />
+    
+    <label id="surname">Cognome: </label>
+    <input for="surname" #Surname value={{surname}} />
+     
+    <div>
+        <label>Password</label>
+        <input type="password" #Password value={{password}}>
+        <label>Reinserisci la password</label>
+        <input type="password" #Password2 value={{password2}}>
+        <p *ngIf="err" class="err">Le password non coincidono</p>
+    </div>
+
+    <button class="add-button" (click)="save(Name.value, Surname.value, Password.value, Password2.value)" >
+      Salva mofiche
+    </button> 
+
+  </div>
